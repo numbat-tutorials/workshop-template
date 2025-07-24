@@ -1,0 +1,53 @@
+---
+title: "Quarto workshop"
+author: "John Doe"
+format:
+  html:
+    toc: true
+    theme: solar
+  pdf:
+    toc: true
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+```{r}
+1 + 1
+```
+
+![](figures/quarto.svg)
+
+## Table
+
+```{r}
+#| echo: false
+
+library(ggplot2)
+
+data(cars)
+
+table_data <- head(cars, 5)
+
+knitr::kable(table_data,
+             caption = "Speed and stopping 
+             distances of cars")
+``` 
+
+
+## Plot
+
+
+```{r}
+#| fig-label: cars-plot
+#| fig-cap: "Distance taken for a car to stop, against it's speed during the test."
+
+library(ggplot2)
+
+ggplot(cars,
+      aes(x = speed,
+          y = dist)
+      ) +
+  geom_point()
+``` 
