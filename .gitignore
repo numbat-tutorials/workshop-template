@@ -41,3 +41,5 @@ vignettes/*.pdf
 /*_files/
 
 .DS_Store
+
+.quarto/
